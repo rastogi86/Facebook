@@ -1,37 +1,57 @@
 package com.facebook.automation.TestExecutor;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.File;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import com.facebook.automation.browser.ChromeBrowser;
+import com.facebook.automation.utils.POJOComponentHolder;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestBase {
+public class TestBase 
+{
+
+	public WebDriver driver;
+	public Object options;
+	POJOComponentHolder pojo= new POJOComponentHolder();
+	File fis=new File(System.getProperty("user.dir")+"\\com\facebook\\automation\\resources\\RunProperties.properties");
+	Properties prop=new Properties();
+	@Parameters("browser")
+	@BeforeTest
+	public void beforeTest(@Optional("") String browser)
+	{
+		browser=browser.toLowerCase();
+		pojo.setBrowser(browser);
+		
+		switch(browser)
+		{
+		case "chrome": 
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver(new ChromeBrowser().getChromeOptions());
+			pojo.setDriver(driver);
+			break;
+		}
+		
+		driver.get(prop.getProperty("url"));
+		
+	}
 	
-	/*
-	 * public static WebDriver driver; public static Properties prop;
-	 * 
-	 * @BeforeSuite public static WebDriver setUp() throws IOException { prop = new
-	 * Properties(); FileInputStream fis = new FileInputStream(
-	 * System.getProperty("user.dir") +
-	 * "com\\facebook\\automation\\resources\\RunProperties.properties");
-	 * prop.load(fis);
-	 * if(prop.getProperty("browser").toLowerCase().equals("chrome")) {
-	 * WebDriverManager.chromedriver().setup(); driver=new ChromeDriver(); } else
-	 * if(prop.getProperty("browser").toLowerCase().equals("firefox")) {
-	 * WebDriverManager.firefoxdriver().setup(); driver=new FirefoxDriver(); }
-	 * driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	 * driver.get(prop.getProperty("url")); return driver; }
-	 * 
-	 * @AfterSuite public void tearDown() { driver.quit();
-	 * 
-	 * }
-	 */
+	
+	
+	
+	@AfterTest
+	public void tearDown() {
+		driver.quit();
+	}
+
+
+	
 }
+	

@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.facebook.automation.main.LoginFacebookSteps">
+      <class name="com.facebook.automation.main.FacebookLoginSteps">
         <methods>
-          <include name="setUp"/>
           <include name="login"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.facebook.automation.main.LoginFacebookSteps -->
+      </class> <!-- com.facebook.automation.main.FacebookLoginSteps -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

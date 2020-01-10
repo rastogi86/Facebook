@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 09 01:34:42 PST 2020</td>
+<td>Started on:</td><td>Fri Jan 10 02:12:45 PST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15456 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (30 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,79 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.facebook.automation.main.LoginFacebookSteps.login()'><b>login</b><br>Test class: com.facebook.automation.main.LoginFacebookSteps</td>
-<td></td>
-<td>15</td>
-<td>com.facebook.automation.main.LoginFacebookSteps@71bbf57e</td></tr>
+<td title='com.facebook.automation.main.FacebookLoginSteps.login()'><b>login</b><br>Test class: com.facebook.automation.main.FacebookLoginSteps</td>
+<td><div><pre>org.testng.TestNGException: 
+Cannot inject @Test annotated Method [login] with [class com.facebook.automation.utils.POJOComponentHolder].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:458)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:372)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:729)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:895)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace511473681", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace511473681'><pre>org.testng.TestNGException: 
+Cannot inject @Test annotated Method [login] with [class com.facebook.automation.utils.POJOComponentHolder].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:458)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:372)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:729)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:895)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.facebook.automation.main.FacebookLoginSteps@7d0587f1</td></tr>
 </table><p>
 </body>
 </html>
